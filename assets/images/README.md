@@ -5,7 +5,7 @@ Lege die Dateien hier ab (exakt diese Dateinamen), dann ist die Seite vollständ
 
 | Datei                 | Verwendung                          | Empfehlung                                  |
 |-----------------------|-------------------------------------|---------------------------------------------|
-| `hero-beratung.jpg`   | Hero-Hintergrundbild (Beratungsszene) | Querformat, ca. 1920×1280 px, JPG, optimiert |
+| `hero-beratung.png`   | Hero-Hintergrundbild (Beratungsszene) | Querformat, ca. 1920×1280 px, optimiert |
 | `portrait.jpg`        | „Über mich"-Porträtfoto              | Hochformat 4:5, ca. 800×1000 px, JPG         |
 
 ## Hinweis
