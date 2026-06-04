@@ -311,9 +311,9 @@ li { margin-bottom: var(--sp-2); }
 .hero--with-image::after {
   content: "";
   position: absolute; inset: 0;
-  /* Dezenter Verlauf nur am unteren Bildrand: unten leicht navy, nach oben transparent,
-     damit das Foto (vor allem die Personen) klar sichtbar bleibt. */
-  background: linear-gradient(to top, rgba(19,31,56,0.72) 0%, rgba(19,31,56,0.45) 18%, rgba(19,31,56,0.12) 38%, rgba(19,31,56,0) 60%);
+  /* Gleichmaessiger blauer Navy-Schleier ueber dem ganzen Bild fuer gute
+     Schrift-Lesbarkeit – nach unten etwas staerker, Personen bleiben sichtbar. */
+  background: linear-gradient(180deg, rgba(19,31,56,0.42) 0%, rgba(19,31,56,0.46) 50%, rgba(19,31,56,0.58) 100%);
   z-index: 0;
 }
 .hero__inner { position: relative; z-index: 1; }
@@ -1115,10 +1115,14 @@ li { margin-bottom: var(--sp-2); }
 
 /* ---------- 24. Hero: Textblock unten, dezente Lesbarkeit ---------- */
 .hero--with-image .hero__title {
-  /* Deutlich kleinere, kompaktere Headline – soll das Foto nicht erschlagen */
-  font-size: clamp(1.05rem, 2.1vw, 1.5rem);
-  line-height: 1.15;
-  max-width: 24ch;
+  /* Groessere, aber kompakte Headline (enger Zeilenabstand) */
+  font-size: clamp(1.75rem, 4.2vw, 2.875rem);
+  line-height: 1.12;
+  max-width: 20ch;
+}
+.hero--with-image .hero__subtitle {
+  /* Etwas kleinere Subline */
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
 }
 .hero--with-image .hero__eyebrow,
 .hero--with-image .hero__title,
