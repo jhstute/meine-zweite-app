@@ -1115,13 +1115,20 @@ li { margin-bottom: var(--sp-2); }
 
 /* ---------- 24. Hero: Textblock unten, dezente Lesbarkeit ---------- */
 .hero--with-image .hero__title {
-  /* Kleinere Headline als die globale h1-Groesse */
-  font-size: clamp(1.5rem, 3.2vw, 2.25rem);
-  max-width: 22ch;
+  /* Deutlich kleinere, kompaktere Headline – soll das Foto nicht erschlagen */
+  font-size: clamp(1.05rem, 2.1vw, 1.5rem);
+  line-height: 1.15;
+  max-width: 24ch;
 }
 .hero--with-image .hero__eyebrow,
 .hero--with-image .hero__title,
 .hero--with-image .hero__subtitle,
 .hero--with-image .hero__meta {
   text-shadow: 0 1px 6px rgba(19,31,56,0.55);
+}
+
+/* Mobile: mehr von der Szene zeigen (Berater links sichtbar) und Hero flacher */
+@media (max-width: 767px) {
+  .hero--with-image { min-height: 52vh; }
+  .hero--with-image::before { background-position: 28% top; }
 }
