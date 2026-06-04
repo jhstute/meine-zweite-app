@@ -304,15 +304,16 @@ li { margin-bottom: var(--sp-2); }
   position: absolute; inset: 0;
   background-image: var(--hero-image, none);
   background-size: cover;
-  background-position: center;
-  opacity: 0.85;
+  background-position: center right;
+  opacity: 1;
   z-index: 0;
 }
 .hero--with-image::after {
   content: "";
   position: absolute; inset: 0;
-  /* Vertikales Overlay: oben dunkler für Headline-Lesbarkeit, mittig dezent, unten dunkler für Button-Kontrast */
-  background: linear-gradient(180deg, rgba(19,31,56,0.78) 0%, rgba(19,31,56,0.30) 45%, rgba(19,31,56,0.65) 100%);
+  /* Horizontales Overlay: links dunkel (hinter Headline + Button), nach rechts transparent,
+     damit die Personen im Foto rechts sichtbar bleiben. */
+  background: linear-gradient(90deg, rgba(19,31,56,0.92) 0%, rgba(19,31,56,0.80) 30%, rgba(19,31,56,0.45) 55%, rgba(19,31,56,0.10) 78%, rgba(19,31,56,0) 100%);
   z-index: 0;
 }
 .hero__inner { position: relative; z-index: 1; }
@@ -1096,3 +1097,12 @@ li { margin-bottom: var(--sp-2); }
   color: var(--color-gray);
 }
 .calendly-inline-widget { min-width: 320px; height: 700px; }
+
+/* ---------- 23. Säulen-Karten: Höhe automatisch an Inhalt anpassen ----------
+   Verhindert abgeschnittenen Text in den drei Programm-Säulen. Karten richten
+   sich am laengsten Inhalt aus (gleich hoch durch Grid-Stretch), aber nichts
+   wird beschnitten und der gesamte Fliesstext bricht normal um. */
+#saeulen .card { height: auto; overflow: visible; }
+#saeulen .card__text { overflow: visible; flex-grow: 1; }
+#saeulen .card__text,
+#saeulen .card__title { overflow-wrap: break-word; }
