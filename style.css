@@ -297,23 +297,23 @@ li { margin-bottom: var(--sp-2); }
   display: flex;
   align-items: center;
 }
-.hero--with-image { min-height: 70vh; }
+.hero--with-image { min-height: 70vh; align-items: flex-end; }
 @media (min-width: 768px) { .hero--with-image { min-height: 78vh; } }
 .hero--with-image::before {
   content: "";
   position: absolute; inset: 0;
   background-image: var(--hero-image, none);
   background-size: cover;
-  background-position: center right;
+  background-position: center top;
   opacity: 1;
   z-index: 0;
 }
 .hero--with-image::after {
   content: "";
   position: absolute; inset: 0;
-  /* Horizontales Overlay: links dunkel (hinter Headline + Button), nach rechts transparent,
-     damit die Personen im Foto rechts sichtbar bleiben. */
-  background: linear-gradient(90deg, rgba(19,31,56,0.92) 0%, rgba(19,31,56,0.80) 30%, rgba(19,31,56,0.45) 55%, rgba(19,31,56,0.10) 78%, rgba(19,31,56,0) 100%);
+  /* Dezenter Verlauf nur am unteren Bildrand: unten leicht navy, nach oben transparent,
+     damit das Foto (vor allem die Personen) klar sichtbar bleibt. */
+  background: linear-gradient(to top, rgba(19,31,56,0.72) 0%, rgba(19,31,56,0.45) 18%, rgba(19,31,56,0.12) 38%, rgba(19,31,56,0) 60%);
   z-index: 0;
 }
 .hero__inner { position: relative; z-index: 1; }
@@ -1106,3 +1106,22 @@ li { margin-bottom: var(--sp-2); }
 #saeulen .card__text { overflow: visible; flex-grow: 1; }
 #saeulen .card__text,
 #saeulen .card__title { overflow-wrap: break-word; }
+
+/* Lesbarer Karten-Text: dunkles Navy auf weissem Karten-Hintergrund
+   (ueberschreibt die weisse Schrift, die .section--navy sonst vererbt). */
+#saeulen .card__title { color: var(--color-navy); }
+#saeulen .card__text,
+#saeulen .card__text * { color: var(--color-navy); }
+
+/* ---------- 24. Hero: Textblock unten, dezente Lesbarkeit ---------- */
+.hero--with-image .hero__title {
+  /* Kleinere Headline als die globale h1-Groesse */
+  font-size: clamp(1.5rem, 3.2vw, 2.25rem);
+  max-width: 22ch;
+}
+.hero--with-image .hero__eyebrow,
+.hero--with-image .hero__title,
+.hero--with-image .hero__subtitle,
+.hero--with-image .hero__meta {
+  text-shadow: 0 1px 6px rgba(19,31,56,0.55);
+}
