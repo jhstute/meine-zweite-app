@@ -1164,6 +1164,11 @@ li { margin-bottom: var(--sp-2); }
   gap: var(--sp-4);
 }
 .about-teaser__media .about-teaser__image { width: 100%; }
+/* Auf Desktop (zweispaltig) das Bild um die Hoehe der Eyebrow nach unten ruecken,
+   sodass die Bild-Oberkante mit der Oberkante der Ueberschrift auf einer Linie liegt. */
+@media (min-width: 1024px) {
+  .about-teaser__media { margin-top: calc(var(--fs-xs) * 1.65 + var(--sp-3)); }
+}
 .video-placeholder {
   position: relative;
   display: block;
@@ -1212,4 +1217,9 @@ li { margin-bottom: var(--sp-2); }
 
 /* ---------- 27. Footer: Spalten oben ausrichten (Logo auf Höhe der Überschriften) ---------- */
 .footer-grid { align-items: start; }
-.footer-col__brand .footer-brand-line { margin-top: 0; }
+/* Symbol-Logo und Schriftzug oben buendig statt vertikal zentriert, damit die
+   Logo-Oberkante auf einer Linie mit den Spaltenueberschriften (PROGRAMM …) sitzt. */
+.footer-col__brand .footer-brand-line { margin-top: 0; align-items: flex-start; }
+
+/* ---------- 28. Kundenstimmen: 2x2-Raster, mehr Innenabstand ---------- */
+#stimmen .testimonial { padding: var(--sp-8); }
