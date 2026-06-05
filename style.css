@@ -1230,3 +1230,16 @@ li { margin-bottom: var(--sp-2); }
   margin: var(--sp-8) auto 0;
   font-size: var(--fs-sm);
 }
+
+/* ---------- 30. Erstgespraech-Formular im CTA: Datenschutz-Hinweis ---------- */
+.cta-block .cta-form-privacy {
+  margin: var(--sp-4) auto 0;
+  font-size: var(--fs-xs);
+  color: var(--color-light-blue);
+  max-width: 500px;
+}
+.cta-block .cta-form-privacy a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+.cta-block .cta-form-privacy a:hover { color: var(--color-orange); }
