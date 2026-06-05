@@ -313,7 +313,7 @@ li { margin-bottom: var(--sp-2); }
   position: absolute; inset: 0;
   /* Gleichmaessiger blauer Navy-Schleier ueber dem ganzen Bild fuer gute
      Schrift-Lesbarkeit – nach unten etwas staerker, Personen bleiben sichtbar. */
-  background: linear-gradient(180deg, rgba(19,31,56,0.42) 0%, rgba(19,31,56,0.46) 50%, rgba(19,31,56,0.58) 100%);
+  background: linear-gradient(180deg, rgba(19,31,56,0.55) 0%, rgba(19,31,56,0.59) 50%, rgba(19,31,56,0.72) 100%);
   z-index: 0;
 }
 .hero__inner { position: relative; z-index: 1; }
@@ -1136,3 +1136,80 @@ li { margin-bottom: var(--sp-2); }
   .hero--with-image { min-height: 52vh; }
   .hero--with-image::before { background-position: 28% top; }
 }
+
+/* Mikro-Text unter dem Button: gleicher Abstand nach oben wie Subheadline->Button */
+.hero__meta { margin-top: var(--sp-4); }
+
+/* ---------- 25. Akzent-Saetze ---------- */
+/* Hervorgehobener Kernsatz (z. B. Umsetzungs-Bereich) */
+.statement-strong {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.4;
+}
+/* Oranger Schluesselsatz, etwas groesser – optisch herausstechend */
+.text-accent {
+  color: var(--color-orange);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ---------- 26. Über mich: Profilbild oben ausrichten + Video-Platzhalter ---------- */
+#ueber-mich .about-teaser { align-items: start; }
+.about-teaser__media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+.about-teaser__media .about-teaser__image { width: 100%; }
+.video-placeholder {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: var(--color-navy);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  border: 1px solid var(--color-gray-line);
+  transition: box-shadow var(--transition);
+}
+.video-placeholder:hover { box-shadow: var(--shadow-md); }
+.video-placeholder__play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition), background var(--transition);
+}
+.video-placeholder__play::after {
+  content: "";
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent var(--color-orange);
+  margin-left: 4px;
+}
+.video-placeholder:hover .video-placeholder__play {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: var(--color-white);
+}
+.video-placeholder:focus-visible { outline: 2px solid var(--color-orange); outline-offset: 2px; }
+.video-placeholder__caption {
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: var(--color-gray);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ---------- 27. Footer: Spalten oben ausrichten (Logo auf Höhe der Überschriften) ---------- */
+.footer-grid { align-items: start; }
+.footer-col__brand .footer-brand-line { margin-top: 0; }
