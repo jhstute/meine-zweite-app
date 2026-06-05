@@ -1167,7 +1167,7 @@ li { margin-bottom: var(--sp-2); }
 /* Auf Desktop (zweispaltig) das Bild um die Hoehe der Eyebrow nach unten ruecken,
    sodass die Bild-Oberkante mit der Oberkante der Ueberschrift auf einer Linie liegt. */
 @media (min-width: 1024px) {
-  .about-teaser__media { margin-top: calc(var(--fs-xs) * 1.65 + var(--sp-3)); }
+  .about-teaser__media { margin-top: calc(var(--fs-xs) * 1.65 + var(--sp-3) + var(--sp-3)); }
 }
 .video-placeholder {
   position: relative;
@@ -1223,3 +1223,10 @@ li { margin-bottom: var(--sp-2); }
 
 /* ---------- 28. Kundenstimmen: 2x2-Raster, mehr Innenabstand ---------- */
 #stimmen .testimonial { padding: var(--sp-8); }
+
+/* ---------- 29. Abschluss-CTA: Mikro-Text mit grosszuegigem Abstand nach oben ----------
+   Hoehere Spezifitaet als '.cta-block p', damit der Abstand wirklich greift. */
+.cta-block p.cta-block__micro {
+  margin: var(--sp-8) auto 0;
+  font-size: var(--fs-sm);
+}
